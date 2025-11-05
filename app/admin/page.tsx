@@ -24,8 +24,10 @@ export default function Admin() {
     setError('')
 
     try {
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001'
+      console.log('API URL:', apiUrl) // Debug log
       const response = await fetch(
-        `http://localhost:3001/rsvp?password=${encodeURIComponent(password)}`
+        `${apiUrl}/rsvp?password=${encodeURIComponent(password)}`
       )
 
       if (response.ok) {
@@ -47,8 +49,10 @@ export default function Admin() {
     setError('')
 
     try {
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001'
+      console.log('API URL:', apiUrl) // Debug log
       const response = await fetch(
-        `http://localhost:3001/rsvp?password=${encodeURIComponent(password)}`
+        `${apiUrl}/rsvp?password=${encodeURIComponent(password)}`
       )
 
       if (response.ok) {

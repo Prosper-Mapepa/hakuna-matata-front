@@ -19,7 +19,9 @@ export default function Home() {
     setIsSubmitting(true)
 
     try {
-      const response = await fetch('http://localhost:3001/rsvp', {
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001'
+      console.log('API URL:', apiUrl) // Debug log
+      const response = await fetch(`${apiUrl}/rsvp`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
